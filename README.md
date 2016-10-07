@@ -2,8 +2,8 @@
 
 A Cloud Foundry CLI plugin to manage backups on service instances. Currently, only supporting MariaDB services.
 
-Originally developed in the scope of [Swisscom AppCloud](http://developer.swisscom.com):
-* [Swisscom Guid for Backups](https://docs.developer.swisscom.com/devguide-sc/services/backups.html)
+Originally developed to be used with [Swisscom AppCloud](http://developer.swisscom.com):
+* [Swisscom Guide for Backups](https://docs.developer.swisscom.com/devguide-sc/services/backups.html)
 * [Swisscom API for Service Instances](https://api.lyra-836.appcloud.swisscom.com/api-doc/#/Service_Instances)
 
 ## Installation
@@ -13,7 +13,8 @@ Currently you can only install this plugin through the binary:
 1. Download the binary for your platform (Windows, Mac, or Linux) from the latest [Release](https://github.com/gsmachado/cf-mariadb-backup-plugin/releases)
 2. Go to the directory where you downloaded the binary:
 	* `cd path/to/downloaded/binary`
-3. If you've already installed the plugin and is just updating, you must first run: **cf uninstall-plugin cf-mariadb-backup-plugin**
+3. If you've already installed the plugin and is just updating, you must first run:
+	* `cf uninstall-plugin cf-mariadb-backup-plugin`
 4. Then, install the plugin:
 	* Windows: `cf install-plugin cf-mariadb-backup-plugin.exe`
 	* Mac: `cf install-plugin cf-mariadb-backup-plugin_darwin`

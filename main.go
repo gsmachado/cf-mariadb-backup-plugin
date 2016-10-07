@@ -60,9 +60,12 @@ func getBackups(cliConnection plugin.CliConnection, serviceInstance string) (mod
 		if err != nil {
 			return model.ServiceInstanceResults{}, err
 		}
+		// joining since it's an array of strings
+		outputStr := strings.Join(output, "")
+		outputBytes := []byte(outputStr)
 
 		results := model.ServiceInstanceResults{}
-		err = json.Unmarshal([]byte(output[0]), &results)
+		err = json.Unmarshal(outputBytes, &results)
 		if err != nil {
 			return model.ServiceInstanceResults{}, err
 		}
@@ -87,7 +90,10 @@ func createBackup(cliConnection plugin.CliConnection, serviceInstance string) (b
 	if err1 != nil {
 		return false, err1
 	}
-	err2 := json.Unmarshal([]byte(output[0]), &result)
+	// joining since it's an array of strings
+	outputStr := strings.Join(output, "")
+	outputBytes := []byte(outputStr)
+	err2 := json.Unmarshal(outputBytes, &result)
 	if err2 != nil || result.Entity == nil {
 		return false, errors.New("Create backup command was not successful.\nDetails:\n" + output[0])
 	}
@@ -101,7 +107,10 @@ func getBackup(cliConnection plugin.CliConnection, serviceInstance string, backu
 	if err1 != nil {
 		return result, err1
 	}
-	err2 := json.Unmarshal([]byte(output[0]), &result)
+	// joining since it's an array of strings
+	outputStr := strings.Join(output, "")
+	outputBytes := []byte(outputStr)
+	err2 := json.Unmarshal(outputBytes, &result)
 	if err2 != nil {
 		return model.ServiceInstanceBackup{}, err2
 	}

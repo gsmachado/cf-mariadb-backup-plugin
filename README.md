@@ -18,7 +18,9 @@ Currently you can only install this plugin through the binary:
 4. Then, install the plugin:
 	* Windows: `cf install-plugin cf-mariadb-backup-plugin.exe`
 	* Mac: `cf install-plugin cf-mariadb-backup-plugin_darwin`
-	* Linux: `cf install-plugin cf-mariadb-backup-plugin_linux`
+	* Linux: 
+		- Ubuntu or other distros (libc): `cf install-plugin cf-mariadb-backup-plugin_linux`
+		- Alpine or other distros (musl): `cf install-plugin cf-mariadb-backup-plugin_linux_musl`
 	* IMPORTANT: If you get a permission error on Mac or Linux, before installing it, run:
 		* For Mac: `chmod +x cf-mariadb-backup-plugin_darwin`
 		* For Linux: `chmod +x cf-mariadb-backup-plugin_linux`
